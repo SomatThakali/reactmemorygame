@@ -2,12 +2,12 @@
   {
     "id": 1,
     "name": "Beth",
-    "image": "./images/beth.png"
+    "image": "beth.png"
   },
   {
     "id": 2,
     "name": "Bird Person",
-    "image": "./images/birdperson.png"
+    "image": "birdperson.png"
   },
   {
     "id": 3,

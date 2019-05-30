@@ -14,8 +14,8 @@ export class Card extends Component {
 }
 
 const imageStyle = {
-  maxHeight: "200px",
-  maxWidth: "200px",
+  maxHeight: "180px",
+  maxWidth: "180px",
   marginLeft: "20px",
   marginRight: "20px",
   marginBottom: "10px"

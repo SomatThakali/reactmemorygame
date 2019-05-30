@@ -9,7 +9,7 @@ const Row = props => {
 };
 
 const rowStyle = {
-  marginLeft: "40px",
-  marginRight: "40px"
+  marginLeft: "70px",
+  marginRight: "70px"
 };
 export default Row;

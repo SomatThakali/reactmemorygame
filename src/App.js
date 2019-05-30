@@ -8,29 +8,7 @@ import images from "./image.json";
 
 export class App extends Component {
   state = {
-    // images
-    images: [
-      {
-        id: 1,
-        name: "Beth",
-        image: "beth.png"
-      },
-      {
-        id: 2,
-        name: "Bird Person",
-        image: "birdperson.png"
-      },
-      {
-        id: 3,
-        name: "Evil Morty",
-        image: "evilmorty.png"
-      },
-      {
-        id: 4,
-        name: "Giant Head",
-        image: "gianthead.png"
-      }
-    ]
+    images
   };
   render() {
     console.log(images[0].image);
