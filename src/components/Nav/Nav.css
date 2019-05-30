@@ -6,6 +6,11 @@ body {
 a {
   color: white;
 }
+.navBar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
 .navBar ul {
   list-style: none;
   background-color: #444;

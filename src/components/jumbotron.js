@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class jumbotron extends Component {
   render() {
     return (
-      <div className="jumbotron">
+      <div className="jumbotron" style={jumbotronStyle}>
         <h1 className="display-4 text-center mb-4 font-weight-bold">
           Clicky Game!
         </h1>
@@ -15,5 +15,10 @@ export class jumbotron extends Component {
     );
   }
 }
+const jumbotronStyle = {
+  marginTop: "100px",
+  paddingTop: "100px",
+  paddingBottom: "100px"
+};
 
 export default jumbotron;
