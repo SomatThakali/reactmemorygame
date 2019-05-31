@@ -19,6 +19,7 @@ export class Game extends Component {
     array.sort(() => Math.random() - 0.5);
   };
 
+  /** This method will update the initial state if the user guess the wrong image */
   guessWrongSetState = () => {
     this.setState({
       topScore:
@@ -32,6 +33,7 @@ export class Game extends Component {
     });
   };
 
+  /** This method will update the initial state if the user guess the right image */
   guessRightSetState = newImageArray => {
     this.setState({
       score: this.state.score + 1,
@@ -41,6 +43,7 @@ export class Game extends Component {
     });
   };
 
+  /** This method will check if the user guess is right or wrong */
   guessImage = id => {
     const findImage = this.state.unguessedImages.find(image => image.id === id);
 
