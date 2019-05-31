@@ -11,7 +11,9 @@ export class Nav extends Component {
               <a href="/">Clicky Game</a>
             </li>
             <li>Click an Image to begin!</li>
-            <li>Score: 0 | Top Score: 0</li>
+            <li>
+              Score: {this.props.score} | Top Score: {this.props.topScore}
+            </li>
           </ul>
         </div>
       </header>

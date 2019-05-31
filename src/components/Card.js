@@ -5,9 +5,10 @@ export class Card extends Component {
     return (
       <img
         style={imageStyle}
-        src={require("../images/" + this.props.image)}
+        src={require("../images/" + this.props.imageUrl)}
         className="img-fluid img-thumbnail"
-        alt="logo"
+        alt={this.props.imageUrl}
+        onClick={() => this.props.guessImage(this.props.id)}
       />
     );
   }
