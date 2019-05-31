@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Nav from "../components/NavBar";
 import Jumbotron from "../components/Jumbotron";
-import Card from "../components/Card";
-import Footer from "../components/Footer";
-import images from "../images/image.json";
 import { Row, Container } from "../components/Grid";
+import Card from "../components/Card";
+import images from "../images/image.json";
+import Footer from "../components/Footer";
 
 export class Game extends Component {
   state = {
@@ -19,32 +19,39 @@ export class Game extends Component {
     array.sort(() => Math.random() - 0.5);
   };
 
+  guessWrongSetState = () => {
+    this.setState({
+      topScore:
+        this.state.score > this.state.topScore
+          ? this.state.score
+          : this.state.topScore,
+      score: 0,
+      images,
+      unguessedImages: images,
+      message: "Game Over. Your Guess is Wrong!"
+    });
+  };
+
+  guessRightSetState = newImageArray => {
+    this.setState({
+      score: this.state.score + 1,
+      images,
+      unguessedImages: newImageArray,
+      message: "Your Guess is Right!"
+    });
+  };
+
   guessImage = id => {
     const findImage = this.state.unguessedImages.find(image => image.id === id);
 
     console.log("image", findImage);
     if (findImage === undefined) {
-      this.setState({
-        topScore:
-          this.state.score > this.state.topScore
-            ? this.state.score
-            : this.state.topScore,
-        score: 0,
-        images,
-        unguessedImages: images,
-        message: "Game Over. Your Guess is Wrong!"
-      });
+      this.guessWrongSetState();
     } else {
       const newImageArray = this.state.unguessedImages.filter(
         image => image.id !== id
       );
-      console.log("new Image Array", newImageArray);
-      this.setState({
-        score: this.state.score + 1,
-        images,
-        unguessedImages: newImageArray,
-        message: "Your Guess is Right!"
-      });
+      this.guessRightSetState(newImageArray);
     }
     this.shuffleArray(images);
   };
