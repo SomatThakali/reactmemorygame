@@ -1,6 +1,6 @@
 import React from "react";
 
-const Row = props => {
+export const Row = props => {
   return (
     <div className="row" style={rowStyle}>
       {props.children}
@@ -12,4 +12,11 @@ const rowStyle = {
   marginLeft: "70px",
   marginRight: "70px"
 };
-export default Row;
+
+export const Container = props => {
+  return <div className="container">{props.children}</div>;
+};
+
+// export default Container;
+
+// export default Row;

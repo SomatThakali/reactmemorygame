@@ -10,7 +10,17 @@ export class Nav extends Component {
             <li className="home">
               <a href="/">Clicky Game</a>
             </li>
-            <li>Click an Image to begin!</li>
+            <li
+              className={
+                this.props.message.indexOf("Wrong") !== -1
+                  ? "incorrectMessage"
+                  : this.props.message.indexOf("Right") !== -1
+                  ? "correctMessage"
+                  : "normalMessage"
+              }
+            >
+              {this.props.message}
+            </li>
             <li>
               Score: {this.props.score} | Top Score: {this.props.topScore}
             </li>
@@ -20,9 +30,5 @@ export class Nav extends Component {
     );
   }
 }
-const li = {
-  display: "inline",
-  padding: "30px",
-  fontSize: "25px"
-};
+
 export default Nav;

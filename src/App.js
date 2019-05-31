@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import Nav from "./components/Nav/Nav";
+import Nav from "./components/NavBar";
 import Jumbotron from "./components/Jumbotron";
 import Card from "./components/Card";
-import Container from "./components/Container";
 import Footer from "./components/Footer";
-import Row from "./components/Row";
-import images from "./image.json";
+import images from "./images/image.json";
+import { Row, Container } from "./components/Grid";
 
 export class App extends Component {
   state = {
     images,
+    unguessedImages: images,
     score: 0,
     topScore: 0,
-    unguessedImages: images
+    message: "Click an image to begin!"
   };
 
   shuffleArray = array => {
@@ -31,7 +31,8 @@ export class App extends Component {
             : this.state.topScore,
         score: 0,
         images,
-        unguessedImages: images
+        unguessedImages: images,
+        message: "Game Over. Your Guess is Wrong!"
       });
     } else {
       const newImageArray = this.state.unguessedImages.filter(
@@ -41,7 +42,8 @@ export class App extends Component {
       this.setState({
         score: this.state.score + 1,
         images,
-        unguessedImages: newImageArray
+        unguessedImages: newImageArray,
+        message: "Your Guess is Right!"
       });
     }
     this.shuffleArray(images);
@@ -50,7 +52,11 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <Nav score={this.state.score} topScore={this.state.topScore} />
+        <Nav
+          score={this.state.score}
+          topScore={this.state.topScore}
+          message={this.state.message}
+        />
         <Jumbotron />
         <Container>
           <Row>

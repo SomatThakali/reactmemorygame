@@ -31,6 +31,15 @@ a {
   text-decoration: none;
 }
 
+.navBar ul .incorrectMessage {
+  color: red;
+}
+.navBar ul .correctMessage {
+  color: green;
+}
+.navBar ul .normalMessage {
+  color: white;
+}
 @media only screen and (min-width: 850px) {
   .navBar li {
     border-bottom: none;
