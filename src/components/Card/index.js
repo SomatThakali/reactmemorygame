@@ -1,19 +1,16 @@
 import React, { Component } from "react";
 
-export class Card extends Component {
-  render() {
-    return (
-      <img
-        style={imageStyle}
-        src={require("../../images/" + this.props.imageUrl)}
-        className="img-fluid img-thumbnail"
-        alt={this.props.imageUrl}
-        onClick={() => this.props.guessImage(this.props.id)}
-      />
-    );
-  }
-}
-
+const Card = props => {
+  return (
+    <img
+      style={imageStyle}
+      src={require("../../images/" + props.imageUrl)}
+      className="img-fluid img-thumbnail"
+      alt={props.imageUrl}
+      onClick={() => props.guessImage(props.id)}
+    />
+  );
+};
 const imageStyle = {
   maxHeight: "180px",
   maxWidth: "180px",
