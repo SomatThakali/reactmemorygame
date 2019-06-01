@@ -2,7 +2,7 @@
   "name": "reactmemorygame",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://somatthakali.github.io/reactmemorygame",
+  "homepage": "https://SomatThakali.github.io/reactmemorygame",
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
