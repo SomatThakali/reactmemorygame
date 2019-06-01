@@ -34,11 +34,11 @@ export class Game extends Component {
   };
 
   /** This method will update the initial state if the user guesses the right image */
-  guessRightSetState = newImageArray => {
+  guessRightSetState = unguessedImageArray => {
     this.setState({
       score: this.state.score + 1,
       images,
-      unguessedImages: newImageArray,
+      unguessedImages: unguessedImageArray,
       message: "Your Guess is Right!"
     });
   };
@@ -51,10 +51,10 @@ export class Game extends Component {
     if (findImage === undefined) {
       this.guessWrongSetState();
     } else {
-      const newImageArray = this.state.unguessedImages.filter(
+      const unguessedImageArray = this.state.unguessedImages.filter(
         image => image.id !== id
       );
-      this.guessRightSetState(newImageArray);
+      this.guessRightSetState(unguessedImageArray);
     }
     this.shuffleArray(images);
   };
